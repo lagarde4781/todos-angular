@@ -1,0 +1,38 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <app-new-item/>
+        </div>
+    </div>
+    <h1 class="display-3 text-center">Items</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between" 
+                    *ngFor="let todo of todos"
+                    [ngClass]="todo.done ? 'list-group-item-success' : 'list-group-item-warning'"
+                >
+                    {{ todo.title }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <app-completed-list />
+            <!-- [completedList]="completedList()"
+                (itemIncompleted)="incompletedItem($event)" -->
+        </div>
+        <div class="col-md-6">
+            <app-incompleted-list
+               
+            />
+
+            <!-- [incompletedList]="incompletedList()"
+            (itemCompleted)="completedItem($event)" -->
+        </div>
+    </div>
+   
+</div>
+
+

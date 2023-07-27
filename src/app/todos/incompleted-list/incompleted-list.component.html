@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="display-4 text-center">Incompleted</h1>
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between"
+            *ngFor="let item of incompletedList"
+        >
+            {{ item.title }}
+            <div>
+                <button class="btn btn-success" (click)="markCompleted(item.id)">Mark as completed</button>
+            </div>
+        </li>
+    </ul>
+</div>
